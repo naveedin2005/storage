@@ -1,0 +1,401 @@
+Sampling process 71861 for 3 seconds with 1 millisecond of run time between samples
+Sampling completed, processing symbols...
+Analysis of sampling nvim (pid 71861) every 1 millisecond
+Process:         nvim [71861]
+Path:            /usr/local/bin/nvim
+Load Address:    0x10abef000
+Identifier:      nvim
+Version:         0
+Code Type:       X86-64
+Parent Process:  ??? [1]
+
+Date/Time:       2015-01-13 00:03:56.580 -0800
+OS Version:      Mac OS X 10.10.1 (14B25)
+Report Version:  7
+Analysis Tool:   /usr/bin/sample
+----
+
+Call graph:
+    2748 Thread_495254   DispatchQueue_1: com.apple.main-thread  (serial)
+      2748 start  (in libdyld.dylib) + 1  [0x7fff8fcd95c9]
+        2748 main  (in nvim) + 8434  [0x10ac8bca4]
+          2374 main_loop  (in nvim) + 1283  [0x10ac8c323]
+          + 887 normal_cmd  (in nvim) + 286  [0x10acafb16]
+          + ! 886 safe_vgetc  (in nvim) + 9  [0x10ac76e4a]
+          + ! : 834 vgetc  (in nvim) + 193  [0x10ac75709]
+          + ! : | 318 vgetorpeek  (in nvim) + 442,365,...  [0x10ac75ceb,0x10ac75c9e,...]
+          + ! : | 294 vgetorpeek  (in nvim) + 1780  [0x10ac76225]
+          + ! : | + 167 check_termcode  (in nvim) + 96  [0x10ad41a38]
+          + ! : | + ! 105 vim_strchr  (in nvim) + 248  [0x10ad2df4f]
+          + ! : | + ! : 105 utfc_ptr2len  (in nvim) + 0,8,...  [0x10ac92a3b,0x10ac92a43,...]
+          + ! : | + ! 62 vim_strchr  (in nvim) + 254,214,...  [0x10ad2df55,0x10ad2df2d,...]
+          + ! : | + 127 check_termcode  (in nvim) + 29,32,...  [0x10ad419f5,0x10ad419f8,...]
+          + ! : | 72 vgetorpeek  (in nvim) + 4144  [0x10ac76b61]
+          + ! : | + 48 ins_typebuf  (in nvim) + 572,501,...  [0x10ac74e1e,0x10ac74dd7,...]
+          + ! : | + 14 ins_typebuf  (in nvim) + 489  [0x10ac74dcb]
+          + ! : | + ! 14 _platform_memmove$VARIANT$Unknown  (in libsystem_platform.dylib) + 71,173,...  [0x7fff8ba39fe7,0x7fff8ba3a04d,...]
+          + ! : | + 8 ins_typebuf  (in nvim) + 134  [0x10ac74c68]
+          + ! : | + ! 8 strlen  (in libsystem_c.dylib) + 44,0,...  [0x7fff8dff118c,0x7fff8dff1160,...]
+          + ! : | + 2 DYLD-STUB$$strlen  (in nvim) + 0  [0x10ad6fc98]
+          + ! : | 36 vgetorpeek  (in nvim) + 811  [0x10ac75e5c]
+          + ! : | + 24 mb_unescape  (in nvim) + 25,46,...  [0x10ac94a81,0x10ac94a96,...]
+          + ! : | + 12 mb_unescape  (in nvim) + 191  [0x10ac94b27]
+          + ! : | +   12 utfc_ptr2len  (in nvim) + 4,8,...  [0x10ac92a3f,0x10ac92a43,...]
+          + ! : | 26 vgetorpeek  (in nvim) + 336  [0x10ac75c81]
+          + ! : | + 10 read_readbuf  (in nvim) + 71,7,...  [0x10ac79e86,0x10ac79e46,...]
+          + ! : | + 9 read_readbuffers  (in nvim) + 5,33,...  [0x10ac73d5f,0x10ac73d7b,...]
+          + ! : | + 7 read_readbuffers  (in nvim) + 22  [0x10ac73d70]
+          + ! : | +   7 read_readbuf  (in nvim) + 67,6,...  [0x10ac79e82,0x10ac79e45,...]
+          + ! : | 25 vgetorpeek  (in nvim) + 3811  [0x10ac76a14]
+          + ! : | + 25 del_typebuf  (in nvim) + 10,23,...  [0x10ac74f73,0x10ac74f80,...]
+          + ! : | 20 vgetorpeek  (in nvim) + 4467  [0x10ac76ca4]
+          + ! : | + 20 del_typebuf  (in nvim) + 8,0,...  [0x10ac74f71,0x10ac74f69,...]
+          + ! : | 12 vgetorpeek  (in nvim) + 1170  [0x10ac75fc3]
+          + ! : | + 10 line_breakcheck  (in nvim) + 0,24,...  [0x10acaaee5,0x10acaaefd,...]
+          + ! : | + 2 os_breakcheck  (in nvim) + 14,11  [0x10ad5314b,0x10ad53148]
+          + ! : | 10 vgetorpeek  (in nvim) + 4172  [0x10ac76b7d]
+          + ! : | + 10 free  (in libsystem_malloc.dylib) + 6,327,...  [0x7fff8e1bd791,0x7fff8e1bd8d2,...]
+          + ! : | 8 vgetorpeek  (in nvim) + 4181  [0x10ac76b86]
+          + ! : | + 8 free  (in libsystem_malloc.dylib) + 1,8,...  [0x7fff8e1bd78c,0x7fff8e1bd793,...]
+          + ! : | 4 vgetorpeek  (in nvim) + 63  [0x10ac75b70]
+          + ! : | + 4 get_real_state  (in nvim) + 0,28,...  [0x10acab7b0,0x10acab7cc,...]
+          + ! : | 4 vgetorpeek  (in nvim) + 4088  [0x10ac76b29]
+          + ! : | + 4 _platform_strncmp  (in libsystem_platform.dylib) + 349,320  [0x7fff8ba3615d,0x7fff8ba36140]
+          + ! : | 3 DYLD-STUB$$strncmp  (in nvim) + 0  [0x10ad6fca4]
+          + ! : | 2 DYLD-STUB$$free  (in nvim) + 0  [0x10ad6f920]
+          + ! : 52 vgetc  (in nvim) + 0,193,...  [0x10ac75648,0x10ac75709,...]
+          + ! 1 safe_vgetc  (in nvim) + 1  [0x10ac76e42]
+          + 392 normal_cmd  (in nvim) + 3116  [0x10acb0624]
+          + ! 226 add_to_showcmd  (in nvim) + 212  [0x10acb0e99]
+          + ! : 217 char_avail  (in nvim) + 37  [0x10ac76f20]
+          + ! : | 127 vgetorpeek  (in nvim) + 1780  [0x10ac76225]
+          + ! : | + 96 check_termcode  (in nvim) + 96  [0x10ad41a38]
+          + ! : | + ! 53 vim_strchr  (in nvim) + 254,241,...  [0x10ad2df55,0x10ad2df48,...]
+          + ! : | + ! 43 vim_strchr  (in nvim) + 248  [0x10ad2df4f]
+          + ! : | + !   43 utfc_ptr2len  (in nvim) + 135,0,...  [0x10ac92ac2,0x10ac92a3b,...]
+          + ! : | + 31 check_termcode  (in nvim) + 8,56,...  [0x10ad419e0,0x10ad41a10,...]
+          + ! : | 61 vgetorpeek  (in nvim) + 4,1177,...  [0x10ac75b35,0x10ac75fca,...]
+          + ! : | 17 vgetorpeek  (in nvim) + 336  [0x10ac75c81]
+          + ! : | + 7 read_readbuffers  (in nvim) + 22  [0x10ac73d70]
+          + ! : | + ! 7 read_readbuf  (in nvim) + 1,0,...  [0x10ac79e40,0x10ac79e3f,...]
+          + ! : | + 5 read_readbuf  (in nvim) + 7,71,...  [0x10ac79e46,0x10ac79e86,...]
+          + ! : | + 5 read_readbuffers  (in nvim) + 6,33,...  [0x10ac73d60,0x10ac73d7b,...]
+          + ! : | 7 vgetorpeek  (in nvim) + 1170  [0x10ac75fc3]
+          + ! : | + 2 input_poll  (in nvim) + 8  [0x10ad5315f]
+          + ! : | + 2 line_breakcheck  (in nvim) + 10,34  [0x10acaaeef,0x10acaaf07]
+          + ! : | + 1 input_poll  (in nvim) + 65  [0x10ad53198]
+          + ! : | + ! 1 input_ready  (in nvim) + 28  [0x10ad535a1]
+          + ! : | + !   1 rbuffer_pending  (in nvim) + 4  [0x10ad5406b]
+          + ! : | + 1 input_ready  (in nvim) + 28  [0x10ad535a1]
+          + ! : | + ! 1 rbuffer_pending  (in nvim) + 12  [0x10ad54073]
+          + ! : | + 1 os_breakcheck  (in nvim) + 4  [0x10ad53141]
+          + ! : | 5 vgetorpeek  (in nvim) + 63  [0x10ac75b70]
+          + ! : |   5 get_real_state  (in nvim) + 11,0,...  [0x10acab7bb,0x10acab7b0,...]
+          + ! : 9 char_avail  (in nvim) + 41,57,...  [0x10ac76f24,0x10ac76f34,...]
+          + ! 64 add_to_showcmd  (in nvim) + 207  [0x10acb0e94]
+          + ! : 22 __strcat_chk  (in libsystem_c.dylib) + 47,6,...  [0x7fff8e074115,0x7fff8e0740ec,...]
+          + ! : 17 __strcat_chk  (in libsystem_c.dylib) + 28  [0x7fff8e074102]
+          + ! : | 17 strlen  (in libsystem_c.dylib) + 22,0,...  [0x7fff8dff1176,0x7fff8dff1160,...]
+          + ! : 10 __strcat_chk  (in libsystem_c.dylib) + 98  [0x7fff8e074148]
+          + ! : | 10 _platform_memmove$VARIANT$Unknown  (in libsystem_platform.dylib) + 151,7,...  [0x7fff8ba3a037,0x7fff8ba39fa7,...]
+          + ! : 7 __strcat_chk  (in libsystem_c.dylib) + 39  [0x7fff8e07410d]
+          + ! : | 7 strlen  (in libsystem_c.dylib) + 7,0,...  [0x7fff8dff1167,0x7fff8dff1160,...]
+          + ! : 6 __strcat_chk  (in libsystem_c.dylib) + 81  [0x7fff8e074137]
+          + ! : | 6 __chk_overlap  (in libsystem_c.dylib) + 4,0  [0x7fff8e073de4,0x7fff8e073de0]
+          + ! : 2 DYLD-STUB$$memcpy  (in libsystem_c.dylib) + 0  [0x7fff8e0747c6]
+          + ! 26 add_to_showcmd  (in nvim) + 103  [0x10acb0e2c]
+          + ! : 15 transchar  (in nvim) + 80  [0x10ac003f5]
+          + ! : | 15 vim_isprintc_strict  (in nvim) + 102,0,...  [0x10ac00492,0x10ac0042c,...]
+          + ! : 11 transchar  (in nvim) + 7,84,...  [0x10ac003ac,0x10ac003f9,...]
+          + ! 23 add_to_showcmd  (in nvim) + 148,157,...  [0x10acb0e59,0x10acb0e62,...]
+          + ! 19 add_to_showcmd  (in nvim) + 142  [0x10acb0e53]
+          + ! : 19 strlen  (in libsystem_c.dylib) + 14,26,...  [0x7fff8dff116e,0x7fff8dff117a,...]
+          + ! 18 add_to_showcmd  (in nvim) + 187  [0x10acb0e80]
+          + ! : 9 __memmove_chk  (in libsystem_c.dylib) + 22  [0x7fff8e073f90]
+          + ! : | 9 _platform_memmove$VARIANT$Unknown  (in libsystem_platform.dylib) + 164,0,...  [0x7fff8ba3a044,0x7fff8ba39fa0,...]
+          + ! : 9 __memmove_chk  (in libsystem_c.dylib) + 17,22,...  [0x7fff8e073f8b,0x7fff8e073f90,...]
+          + ! 16 add_to_showcmd  (in nvim) + 153  [0x10acb0e5e]
+          + !   16 strlen  (in libsystem_c.dylib) + 44,0,...  [0x7fff8dff118c,0x7fff8dff1160,...]
+          + 302 normal_cmd  (in nvim) + 3092  [0x10acb060c]
+          + ! 301 plain_vgetc  (in nvim) + 9  [0x10ac76e5f]
+          + ! : 260 vgetc  (in nvim) + 193  [0x10ac75709]
+          + ! : | 135 vgetorpeek  (in nvim) + 1780  [0x10ac76225]
+          + ! : | + 84 check_termcode  (in nvim) + 96  [0x10ad41a38]
+          + ! : | + ! 46 vim_strchr  (in nvim) + 248  [0x10ad2df4f]
+          + ! : | + ! : 46 utfc_ptr2len  (in nvim) + 1,16,...  [0x10ac92a3c,0x10ac92a4b,...]
+          + ! : | + ! 38 vim_strchr  (in nvim) + 244,241,...  [0x10ad2df4b,0x10ad2df48,...]
+          + ! : | + 51 check_termcode  (in nvim) + 29,103,...  [0x10ad419f5,0x10ad41a3f,...]
+          + ! : | 78 vgetorpeek  (in nvim) + 365,66,...  [0x10ac75c9e,0x10ac75b73,...]
+          + ! : | 26 vgetorpeek  (in nvim) + 4467  [0x10ac76ca4]
+          + ! : | + 26 del_typebuf  (in nvim) + 371,340,...  [0x10ac750dc,0x10ac750bd,...]
+          + ! : | 13 vgetorpeek  (in nvim) + 336  [0x10ac75c81]
+          + ! : | + 6 read_readbuffers  (in nvim) + 0,17,...  [0x10ac73d5a,0x10ac73d6b,...]
+          + ! : | + 5 read_readbuffers  (in nvim) + 22  [0x10ac73d70]
+          + ! : | + ! 5 read_readbuf  (in nvim) + 71,4,...  [0x10ac79e86,0x10ac79e43,...]
+          + ! : | + 2 read_readbuf  (in nvim) + 67,74  [0x10ac79e82,0x10ac79e89]
+          + ! : | 4 vgetorpeek  (in nvim) + 63  [0x10ac75b70]
+          + ! : | + 4 get_real_state  (in nvim) + 67,25,...  [0x10acab7f3,0x10acab7c9,...]
+          + ! : | 4 vgetorpeek  (in nvim) + 1170  [0x10ac75fc3]
+          + ! : |   3 line_breakcheck  (in nvim) + 4,24  [0x10acaaee9,0x10acaaefd]
+          + ! : |   1 os_breakcheck  (in nvim) + 14  [0x10ad5314b]
+          + ! : 41 vgetc  (in nvim) + 670,446,...  [0x10ac758e6,0x10ac75806,...]
+          + ! 1 plain_vgetc  (in nvim) + 37  [0x10ac76e7b]
+          + 270 normal_cmd  (in nvim) + 1879,4047,...  [0x10acb014f,0x10acb09c7,...]
+          + 261 normal_cmd  (in nvim) + 597  [0x10acafc4d]
+          + ! 109 add_to_showcmd  (in nvim) + 212  [0x10acb0e99]
+          + ! : 95 char_avail  (in nvim) + 37  [0x10ac76f20]
+          + ! : | 65 vgetorpeek  (in nvim) + 365,189,...  [0x10ac75c9e,0x10ac75bee,...]
+          + ! : | 23 vgetorpeek  (in nvim) + 336  [0x10ac75c81]
+          + ! : | + 8 read_readbuf  (in nvim) + 6,16,...  [0x10ac79e45,0x10ac79e4f,...]
+          + ! : | + 8 read_readbuffers  (in nvim) + 46,6,...  [0x10ac73d88,0x10ac73d60,...]
+          + ! : | + 7 read_readbuffers  (in nvim) + 22  [0x10ac73d70]
+          + ! : | +   7 read_readbuf  (in nvim) + 0,10,...  [0x10ac79e3f,0x10ac79e49,...]
+          + ! : | 4 vgetorpeek  (in nvim) + 63  [0x10ac75b70]
+          + ! : | + 4 get_real_state  (in nvim) + 25,75  [0x10acab7c9,0x10acab7fb]
+          + ! : | 3 vgetorpeek  (in nvim) + 1170  [0x10ac75fc3]
+          + ! : |   2 line_breakcheck  (in nvim) + 40,10  [0x10acaaf0d,0x10acaaeef]
+          + ! : |   1 input_poll  (in nvim) + 10  [0x10ad53161]
+          + ! : 14 char_avail  (in nvim) + 0,41,...  [0x10ac76efb,0x10ac76f24,...]
+          + ! 54 add_to_showcmd  (in nvim) + 207  [0x10acb0e94]
+          + ! : 19 __strcat_chk  (in libsystem_c.dylib) + 28  [0x7fff8e074102]
+          + ! : | 19 strlen  (in libsystem_c.dylib) + 44,22,...  [0x7fff8dff118c,0x7fff8dff1176,...]
+          + ! : 16 __strcat_chk  (in libsystem_c.dylib) + 20,108,...  [0x7fff8e0740fa,0x7fff8e074152,...]
+          + ! : 10 __strcat_chk  (in libsystem_c.dylib) + 39  [0x7fff8e07410d]
+          + ! : | 10 strlen  (in libsystem_c.dylib) + 0,37,...  [0x7fff8dff1160,0x7fff8dff1185,...]
+          + ! : 6 __strcat_chk  (in libsystem_c.dylib) + 98  [0x7fff8e074148]
+          + ! : | 6 _platform_memmove$VARIANT$Unknown  (in libsystem_platform.dylib) + 0,210,...  [0x7fff8ba39fa0,0x7fff8ba3a072,...]
+          + ! : 3 __strcat_chk  (in libsystem_c.dylib) + 81  [0x7fff8e074137]
+          + ! :   3 __chk_overlap  (in libsystem_c.dylib) + 34,4  [0x7fff8e073e02,0x7fff8e073de4]
+          + ! 32 add_to_showcmd  (in nvim) + 227,4,...  [0x10acb0ea8,0x10acb0dc9,...]
+          + ! 23 add_to_showcmd  (in nvim) + 103  [0x10acb0e2c]
+          + ! : 15 transchar  (in nvim) + 80  [0x10ac003f5]
+          + ! : | 15 vim_isprintc_strict  (in nvim) + 102,104,...  [0x10ac00492,0x10ac00494,...]
+          + ! : 8 transchar  (in nvim) + 133,42,...  [0x10ac0042a,0x10ac003cf,...]
+          + ! 16 add_to_showcmd  (in nvim) + 142  [0x10acb0e53]
+          + ! : 16 strlen  (in libsystem_c.dylib) + 14,37,...  [0x7fff8dff116e,0x7fff8dff1185,...]
+          + ! 13 add_to_showcmd  (in nvim) + 187  [0x10acb0e80]
+          + ! : 8 __memmove_chk  (in libsystem_c.dylib) + 22,17,...  [0x7fff8e073f90,0x7fff8e073f8b,...]
+          + ! : 5 __memmove_chk  (in libsystem_c.dylib) + 22  [0x7fff8e073f90]
+          + ! :   5 _platform_memmove$VARIANT$Unknown  (in libsystem_platform.dylib) + 0,151,...  [0x7fff8ba39fa0,0x7fff8ba3a037,...]
+          + ! 10 add_to_showcmd  (in nvim) + 153  [0x10acb0e5e]
+          + ! : 10 strlen  (in libsystem_c.dylib) + 44,50,...  [0x7fff8dff118c,0x7fff8dff1192,...]
+          + ! 3 DYLD-STUB$$strlen  (in nvim) + 0  [0x10ad6fc98]
+          + ! 1 DYLD-STUB$$__strcat_chk  (in nvim) + 0  [0x10ad6f7ca]
+          + 107 normal_cmd  (in nvim) + 4187  [0x10acb0a53]
+          + ! 83 nv_regname  (in nvim) + 46  [0x10acb5f4e]
+          + ! : 74 valid_yank_reg  (in nvim) + 74  [0x10acbc3ea]
+          + ! : | 37 vim_strchr  (in nvim) + 248  [0x10ad2df4f]
+          + ! : | + 37 utfc_ptr2len  (in nvim) + 0,34,...  [0x10ac92a3b,0x10ac92a5d,...]
+          + ! : | 37 vim_strchr  (in nvim) + 254,233,...  [0x10ad2df55,0x10ad2df40,...]
+          + ! : 9 valid_yank_reg  (in nvim) + 8,69,...  [0x10acbc3a8,0x10acbc3e5,...]
+          + ! 13 nv_regname  (in nvim) + 59,0,...  [0x10acb5f5b,0x10acb5f20,...]
+          + ! 11 set_reg_var  (in nvim) + 39,31,...  [0x10ac14b3b,0x10ac14b33,...]
+          + 44 normal_cmd  (in nvim) + 1826  [0x10acb011a]
+          + ! 16 mb_adjustpos  (in nvim) + 54  [0x10ac94945]
+          + ! : 16 utf_head_off  (in nvim) + 0,6,...  [0x10ac930dd,0x10ac930e3,...]
+          + ! 14 mb_adjustpos  (in nvim) + 32  [0x10ac9492f]
+          + ! : 14 ml_get_buf  (in nvim) + 106,237,...  [0x10ac9a623,0x10ac9a6a6,...]
+          + ! 8 mb_adjustpos  (in nvim) + 131,57,...  [0x10ac94992,0x10ac94948,...]
+          + ! 6 mb_adjust_cursor  (in nvim) + 0,24,...  [0x10ac948ed,0x10ac94905,...]
+          + 27 normal_cmd  (in nvim) + 4299  [0x10acb0ac3]
+          + ! 27 do_pending_operator  (in nvim) + 71,76,...  [0x10acb11a0,0x10acb11a5,...]
+          + 22 normal_cmd  (in nvim) + 1355  [0x10acaff43]
+          + ! 22 set_vcount  (in nvim) + 26,1,...  [0x10ac1ce83,0x10ac1ce6a,...]
+          + 11 normal_cmd  (in nvim) + 1809  [0x10acb0109]
+          + ! 11 free  (in libsystem_malloc.dylib) + 0,12,...  [0x7fff8e1bd78b,0x7fff8e1bd797,...]
+          + 9 normal_cmd  (in nvim) + 276  [0x10acafb0c]
+          + ! 6 set_vcount_ca  (in nvim) + 17,4,...  [0x10acb0d8f,0x10acb0d82,...]
+          + ! 3 set_vcount_ca  (in nvim) + 61  [0x10acb0dbb]
+          + !   3 set_vcount  (in nvim) + 1,26,...  [0x10ac1ce6a,0x10ac1ce83,...]
+          + 8 normal_cmd  (in nvim) + 1432  [0x10acaff90]
+          + ! 8 text_locked  (in nvim) + 16,37,...  [0x10ac59e0e,0x10ac59e23,...]
+          + 8 normal_cmd  (in nvim) + 1796  [0x10acb00fc]
+          + ! 8 checkpcmark  (in nvim) + 22,0,...  [0x10ac8f441,0x10ac8f42b,...]
+          + 6 normal_cmd  (in nvim) + 281  [0x10acafb11]
+          + ! 6 event_enable_deferred  (in nvim) + 11,0,...  [0x10ad523b3,0x10ad523a8,...]
+          + 6 normal_cmd  (in nvim) + 294  [0x10acafb1e]
+          + ! 6 event_disable_deferred  (in nvim) + 10,11,...  [0x10ad523be,0x10ad523bf,...]
+          + 5 normal_cmd  (in nvim) + 1325  [0x10acaff25]
+          + ! 5 readbuf1_empty  (in nvim) + 18,12,...  [0x10ac73c54,0x10ac73c4e,...]
+          + 4 normal_cmd  (in nvim) + 1415  [0x10acaff7f]
+          + ! 4 find_command  (in nvim) + 150,15,...  [0x10acb0f92,0x10acb0f0b,...]
+          + 3 normal_cmd  (in nvim) + 229  [0x10acafadd]
+          + ! 3 typebuf_maplen  (in nvim) + 0  [0x10ac74f59]
+          + 2 mb_adjust_cursor  (in nvim) + 29  [0x10ac9490a]
+          116 main_loop  (in nvim) + 1002  [0x10ac8c20a]
+          + 68 showruler  (in nvim) + 119  [0x10ad0794b]
+          + ! 41 win_redr_ruler  (in nvim) + 141,1479,...  [0x10ad04a0e,0x10ad04f48,...]
+          + ! 13 win_redr_ruler  (in nvim) + 290  [0x10ad04aa3]
+          + ! : 7 validate_virtcol_win  (in nvim) + 6,4,...  [0x10acae140,0x10acae13e,...]
+          + ! : 6 validate_virtcol_win  (in nvim) + 14  [0x10acae148]
+          + ! :   6 check_cursor_moved  (in nvim) + 121,4  [0x10acaccf2,0x10acacc7d]
+          + ! 12 win_redr_ruler  (in nvim) + 267  [0x10ad04a8c]
+          + ! : 12 ml_get_buf  (in nvim) + 106,93,...  [0x10ac9a623,0x10ac9a616,...]
+          + ! 2 win_redr_ruler  (in nvim) + 120  [0x10ad049f9]
+          + !   2 pum_visible  (in nvim) + 4,32  [0x10acd5d79,0x10acd5d95]
+          + 35 showruler  (in nvim) + 82,6,...  [0x10ad07926,0x10ad078da,...]
+          + 9 showruler  (in nvim) + 17  [0x10ad078e5]
+          + ! 9 redrawing  (in nvim) + 16,0,...  [0x10acf9061,0x10acf9051,...]
+          + 4 showruler  (in nvim) + 30  [0x10ad078f2]
+          +   4 pum_visible  (in nvim) + 4,26  [0x10acd5d79,0x10acd5d8f]
+          65 main_loop  (in nvim) + 805  [0x10ac8c145]
+          + 41 update_topline  (in nvim) + 38  [0x10acac7ab]
+          + ! 34 screen_valid  (in nvim) + 17  [0x10acf903e]
+          + ! : 34 screenalloc  (in nvim) + 87,31,...  [0x10ad0618d,0x10ad06155,...]
+          + ! 7 screen_valid  (in nvim) + 9,1,...  [0x10acf9036,0x10acf902e,...]
+          + 18 update_topline  (in nvim) + 8,63,...  [0x10acac78d,0x10acac7c4,...]
+          + 6 update_topline  (in nvim) + 74  [0x10acac7cf]
+          +   6 check_cursor_moved  (in nvim) + 121,17,...  [0x10acaccf2,0x10acacc8a,...]
+          64 main_loop  (in nvim) + 502,1009,...  [0x10ac8c016,0x10ac8c211,...]
+          55 main_loop  (in nvim) + 1132  [0x10ac8c28c]
+          + 22 setcursor  (in nvim) + 19  [0x10acf8eb8]
+          + ! 22 redrawing  (in nvim) + 16,71,...  [0x10acf9061,0x10acf9098,...]
+          + 16 setcursor  (in nvim) + 63,182,...  [0x10acf8ee4,0x10acf8f5b,...]
+          + 9 setcursor  (in nvim) + 32  [0x10acf8ec5]
+          + ! 8 validate_cursor  (in nvim) + 44,0,...  [0x10acad674,0x10acad648,...]
+          + ! 1 validate_cursor  (in nvim) + 21  [0x10acad65d]
+          + !   1 check_cursor_moved  (in nvim) + 20  [0x10acacc8d]
+          + 8 windgoto  (in nvim) + 8,1249,...  [0x10ad06cf4,0x10ad071cd,...]
+          13 main_loop  (in nvim) + 810  [0x10ac8c14a]
+          + 10 validate_cursor  (in nvim) + 21,44,...  [0x10acad65d,0x10acad674,...]
+          + 3 validate_cursor  (in nvim) + 21  [0x10acad65d]
+          +   3 check_cursor_moved  (in nvim) + 34,0,...  [0x10acacc9b,0x10acacc79,...]
+          13 main_loop  (in nvim) + 1137  [0x10ac8c291]
+          + 13 cursor_on  (in nvim) + 29,11,...  [0x10ad41490,0x10ad4147e,...]
+          9 main_loop  (in nvim) + 765  [0x10ac8c11d]
+          + 9 hasAnyFolding  (in nvim) + 1,13,...  [0x10ac6f4e0,0x10ac6f4ec,...]
+          8 main_loop  (in nvim) + 141  [0x10ac8bead]
+          + 8 stuff_empty  (in nvim) + 12,18,...  [0x10ac73c2c,0x10ac73c32,...]
+          8 main_loop  (in nvim) + 876  [0x10ac8c18c]
+          + 8 redraw_statuslines  (in nvim) + 34,69,...  [0x10ad03399,0x10ad033bc,...]
+          7 main_loop  (in nvim) + 750  [0x10ac8c10e]
+          + 7 foldAdjustVisual  (in nvim) + 316,10,...  [0x10ac71347,0x10ac71215,...]
+          5 main_loop  (in nvim) + 461  [0x10ac8bfed]
+          + 5 has_cursormoved  (in nvim) + 1,18,...  [0x10ac6e564,0x10ac6e575,...]
+          5 main_loop  (in nvim) + 1228  [0x10ac8c2ec]
+          + 5 update_curswant  (in nvim) + 52,0,...  [0x10acad6f5,0x10acad6c1,...]
+          3 main_loop  (in nvim) + 435  [0x10ac8bfd3]
+          + 3 stuff_empty  (in nvim) + 12,1  [0x10ac73c2c,0x10ac73c21]
+          2 main_loop  (in nvim) + 995  [0x10ac8c203]
+          + 2 may_clear_sb_text  (in nvim) + 0  [0x10aca3d60]
+          1 main_loop  (in nvim) + 639  [0x10ac8c09f]
+            1 has_textchanged  (in nvim) + 12  [0x10ac6e597]
+
+Total number in stack (recursive counted multiple, when >=5):
+        9       strlen  (in libsystem_c.dylib) + 0  [0x7fff8dff1160]
+        8       read_readbuf  (in nvim) + 0  [0x10ac79e3f]
+        5       _platform_memmove$VARIANT$Unknown  (in libsystem_platform.dylib) + 0  [0x7fff8ba39fa0]
+        5       utfc_ptr2len  (in nvim) + 0  [0x10ac92a3b]
+
+Sort by top of stack, same collapsed (when >= 5):
+        vgetorpeek  (in nvim)        522
+        normal_cmd  (in nvim)        270
+        utfc_ptr2len  (in nvim)        243
+        check_termcode  (in nvim)        209
+        vim_strchr  (in nvim)        190
+        strlen  (in libsystem_c.dylib)        122
+        vgetc  (in nvim)        93
+        del_typebuf  (in nvim)        71
+        main_loop  (in nvim)        64
+        add_to_showcmd  (in nvim)        55
+        read_readbuf  (in nvim)        51
+        ins_typebuf  (in nvim)        48
+        _platform_memmove$VARIANT$Unknown  (in libsystem_platform.dylib)        44
+        win_redr_ruler  (in nvim)        41
+        __strcat_chk  (in libsystem_c.dylib)        38
+        showruler  (in nvim)        35
+        screenalloc  (in nvim)        34
+        redrawing  (in nvim)        31
+        vim_isprintc_strict  (in nvim)        30
+        free  (in libsystem_malloc.dylib)        29
+        read_readbuffers  (in nvim)        28
+        do_pending_operator  (in nvim)        27
+        ml_get_buf  (in nvim)        26
+        set_vcount  (in nvim)        25
+        mb_unescape  (in nvim)        24
+        char_avail  (in nvim)        23
+        transchar  (in nvim)        19
+        update_topline  (in nvim)        18
+        validate_cursor  (in nvim)        18
+        __memmove_chk  (in libsystem_c.dylib)        17
+        get_real_state  (in nvim)        17
+        line_breakcheck  (in nvim)        17
+        check_cursor_moved  (in nvim)        16
+        setcursor  (in nvim)        16
+        utf_head_off  (in nvim)        16
+        cursor_on  (in nvim)        13
+        nv_regname  (in nvim)        13
+        set_reg_var  (in nvim)        11
+        stuff_empty  (in nvim)        11
+        __chk_overlap  (in libsystem_c.dylib)        9
+        hasAnyFolding  (in nvim)        9
+        valid_yank_reg  (in nvim)        9
+        checkpcmark  (in nvim)        8
+        mb_adjust_cursor  (in nvim)        8
+        mb_adjustpos  (in nvim)        8
+        redraw_statuslines  (in nvim)        8
+        text_locked  (in nvim)        8
+        windgoto  (in nvim)        8
+        foldAdjustVisual  (in nvim)        7
+        screen_valid  (in nvim)        7
+        validate_virtcol_win  (in nvim)        7
+        event_disable_deferred  (in nvim)        6
+        event_enable_deferred  (in nvim)        6
+        pum_visible  (in nvim)        6
+        set_vcount_ca  (in nvim)        6
+        DYLD-STUB$$strlen  (in nvim)        5
+        has_cursormoved  (in nvim)        5
+        readbuf1_empty  (in nvim)        5
+        update_curswant  (in nvim)        5
+
+Binary Images:
+       0x10abef000 -        0x10ad93fff +nvim (0) <B7B6AA6C-2B95-3815-9E42-E1A97FB9F9B9> /usr/local/bin/nvim
+       0x10adfd000 -        0x10ae06fff +libintl.8.dylib (0) <1A6A62A0-E4C7-3A09-9095-4356F1929392> /usr/local/opt/gettext/lib/libintl.8.dylib
+    0x7fff68a45000 -     0x7fff68a7b837  dyld (0.0 - ???) <4696A982-1500-34EC-9777-1EF7A03E2659> /usr/lib/dyld
+    0x7fff85216000 -     0x7fff85217fff  libSystem.B.dylib (1213) <DA954461-EC6A-3DF0-8551-6FC810627627> /usr/lib/libSystem.B.dylib
+    0x7fff86401000 -     0x7fff86402fff  libsystem_secinit.dylib (18) <581DAD0F-6B63-3A48-B63B-917AF799ABAA> /usr/lib/system/libsystem_secinit.dylib
+    0x7fff86bdf000 -     0x7fff86be5fff  libsystem_trace.dylib (72.1.3) <A9E6B7D8-C327-3742-AC54-86C94218B1DF> /usr/lib/system/libsystem_trace.dylib
+    0x7fff874da000 -     0x7fff874e2fff  libsystem_dnssd.dylib (561.1.1) <62B70ECA-E40D-3C63-896E-7F00EC386DDB> /usr/lib/system/libsystem_dnssd.dylib
+    0x7fff87e28000 -     0x7fff87e30ffb  libcopyfile.dylib (118.1.2) <0C68D3A6-ACDD-3EF3-991A-CC82C32AB836> /usr/lib/system/libcopyfile.dylib
+    0x7fff889ff000 -     0x7fff88a75fe7  libcorecrypto.dylib (233.1.2) <E1789801-3985-3949-B736-6B3378873301> /usr/lib/system/libcorecrypto.dylib
+    0x7fff89945000 -     0x7fff89947fff  libsystem_configuration.dylib (699.1.5) <9FBA1CE4-97D0-347E-A443-93ED94512E92> /usr/lib/system/libsystem_configuration.dylib
+    0x7fff89db1000 -     0x7fff89db1ff7  libunc.dylib (29) <5676F7EA-C1DF-329F-B006-D2C3022B7D70> /usr/lib/system/libunc.dylib
+    0x7fff89f42000 -     0x7fff89f46fff  libcache.dylib (69) <45E9A2E7-99C4-36B2-BEE3-0C4E11614AD1> /usr/lib/system/libcache.dylib
+    0x7fff8a1f2000 -     0x7fff8a238ff7  libauto.dylib (186) <A260789B-D4D8-316A-9490-254767B8A5F1> /usr/lib/libauto.dylib
+    0x7fff8a657000 -     0x7fff8a682fff  libc++abi.dylib (125) <88A22A0F-87C6-3002-BFBA-AC0F2808B8B9> /usr/lib/libc++abi.dylib
+    0x7fff8a75c000 -     0x7fff8a75dfff  libDiagnosticMessagesClient.dylib (100) <2EE8E436-5CDC-34C5-9959-5BA218D507FB> /usr/lib/libDiagnosticMessagesClient.dylib
+    0x7fff8a76d000 -     0x7fff8a952ff3  libicucore.A.dylib (531.30) <EF0E7544-E317-3550-A962-6AE65E78AF17> /usr/lib/libicucore.A.dylib
+    0x7fff8a9f7000 -     0x7fff8aa1ffff  libsystem_info.dylib (459) <B85A85D5-8530-3A93-B0C3-4DEC41F79478> /usr/lib/system/libsystem_info.dylib
+    0x7fff8ad28000 -     0x7fff8ad2eff7  libsystem_networkextension.dylib (167.1.10) <29AB225B-D7FB-30ED-9600-65D44B9A9442> /usr/lib/system/libsystem_networkextension.dylib
+    0x7fff8ad6b000 -     0x7fff8adbffff  libc++.1.dylib (120) <1B9530FD-989B-3174-BB1C-BDC159501710> /usr/lib/libc++.1.dylib
+    0x7fff8b170000 -     0x7fff8b174fff  libsystem_stats.dylib (163.1.4) <1DB04436-5974-3F16-86CC-5FF5F390339C> /usr/lib/system/libsystem_stats.dylib
+    0x7fff8b18d000 -     0x7fff8b18eff7  libsystem_blocks.dylib (65) <9615D10A-FCA7-3BE4-AA1A-1B195DACE1A1> /usr/lib/system/libsystem_blocks.dylib
+    0x7fff8b743000 -     0x7fff8b928267  libobjc.A.dylib (646) <3B60CD90-74A2-3A5D-9686-B0772159792A> /usr/lib/libobjc.A.dylib
+    0x7fff8ba35000 -     0x7fff8ba3dfff  libsystem_platform.dylib (63) <64E34079-D712-3D66-9CE2-418624A5C040> /usr/lib/system/libsystem_platform.dylib
+    0x7fff8caf9000 -     0x7fff8cb21fff  libxpc.dylib (559.1.22) <9437C02E-A07B-38C8-91CB-299FAA63083D> /usr/lib/system/libxpc.dylib
+    0x7fff8d91b000 -     0x7fff8d91dff7  libquarantine.dylib (76) <DC041627-2D92-361C-BABF-A869A5C72293> /usr/lib/system/libquarantine.dylib
+    0x7fff8dc59000 -     0x7fff8dfeffff  com.apple.CoreFoundation (6.9 - 1151.16) <F2B088AF-A5C6-3FAE-9EB4-7931AF6359E4> /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+    0x7fff8dff0000 -     0x7fff8e07cfff  libsystem_c.dylib (1044.1.2) <C185E862-7424-3210-B528-6B822577A4B8> /usr/lib/system/libsystem_c.dylib
+    0x7fff8e07d000 -     0x7fff8e07dff7  liblaunch.dylib (559.1.22) <8A988924-8BE7-35FE-BF7D-322E90EFE49E> /usr/lib/system/liblaunch.dylib
+    0x7fff8e1b9000 -     0x7fff8e1d5ff7  libsystem_malloc.dylib (53.1.1) <19BCC257-5717-3502-A71F-95D65AFA861B> /usr/lib/system/libsystem_malloc.dylib
+    0x7fff8e1d6000 -     0x7fff8e1e1fff  libcommonCrypto.dylib (60061) <D381EBC6-69D8-31D3-8084-5A80A32CB748> /usr/lib/system/libcommonCrypto.dylib
+    0x7fff8eba2000 -     0x7fff8ebabff7  libsystem_notify.dylib (133.1.1) <61147800-F320-3DAA-850C-BADF33855F29> /usr/lib/system/libsystem_notify.dylib
+    0x7fff8ee25000 -     0x7fff8ee36ff7  libsystem_coretls.dylib (35.1.2) <EBBF7EF6-80D8-3F8F-825C-B412BD6D22C0> /usr/lib/system/libsystem_coretls.dylib
+    0x7fff8ef7d000 -     0x7fff8ef7dff7  libkeymgr.dylib (28) <77845842-DE70-3CC5-BD01-C3D14227CED5> /usr/lib/system/libkeymgr.dylib
+    0x7fff8f3a0000 -     0x7fff8f3a2ff7  libsystem_coreservices.dylib (9) <41B7C578-5A53-31C8-A96F-C73E030B0938> /usr/lib/system/libsystem_coreservices.dylib
+    0x7fff8fcd6000 -     0x7fff8fcd9ff7  libdyld.dylib (353.2.1) <19FAF435-C165-3374-9DEF-D7BBA7D61DB6> /usr/lib/system/libdyld.dylib
+    0x7fff9067a000 -     0x7fff9076cff7  libiconv.2.dylib (42) <2A06D02F-8B76-3864-8D96-64EF5B40BC6C> /usr/lib/libiconv.2.dylib
+    0x7fff90786000 -     0x7fff90788ff7  libsystem_sandbox.dylib (358.1.1) <DB9962EF-8898-31CC-9B87-E01F8CE74C9D> /usr/lib/system/libsystem_sandbox.dylib
+    0x7fff90bd2000 -     0x7fff90beffff  libsystem_kernel.dylib (2782.1.97) <93E0E0A9-75B6-3904-BB4E-4BC7C05F4B6B> /usr/lib/system/libsystem_kernel.dylib
+    0x7fff90caa000 -     0x7fff90cb3fff  libsystem_pthread.dylib (105.1.4) <26B1897F-0CD3-30F3-B55A-37CB45062D73> /usr/lib/system/libsystem_pthread.dylib
+    0x7fff912d9000 -     0x7fff912deff7  libunwind.dylib (35.3) <BE7E51A0-B6EA-3A54-9CCA-9D88F683A6D6> /usr/lib/system/libunwind.dylib
+    0x7fff91f1a000 -     0x7fff91f1fff7  libmacho.dylib (862) <126CA2ED-DE91-308F-8881-B9DAEC3C63B6> /usr/lib/system/libmacho.dylib
+    0x7fff9215d000 -     0x7fff9215effb  libremovefile.dylib (35) <3485B5F4-6CE8-3C62-8DFD-8736ED6E8531> /usr/lib/system/libremovefile.dylib
+    0x7fff9297b000 -     0x7fff929abfff  libsystem_m.dylib (3086.1) <1E12AB45-6D96-36D0-A226-F24D9FB0D9D6> /usr/lib/system/libsystem_m.dylib
+    0x7fff92cf7000 -     0x7fff92d27ff7  libncurses.5.4.dylib (44) <F09809A4-53B9-3E91-A8FA-D3F584C03AA3> /usr/lib/libncurses.5.4.dylib
+    0x7fff9302e000 -     0x7fff93066ffb  libsystem_network.dylib (411) <C0B2313D-47BE-38A9-BEE6-2634A4F5E14B> /usr/lib/system/libsystem_network.dylib
+    0x7fff93396000 -     0x7fff9339dff7  libcompiler_rt.dylib (35) <BF8FC133-EE10-3DA6-9B90-92039E28678F> /usr/lib/system/libcompiler_rt.dylib
+    0x7fff93b4a000 -     0x7fff93b60ff7  libsystem_asl.dylib (267) <F153AC5B-0542-356E-88C8-20A62CA704E2> /usr/lib/system/libsystem_asl.dylib
+    0x7fff93b74000 -     0x7fff93b9eff7  libdispatch.dylib (442.1.4) <502CF32B-669B-3709-8862-08188225E4F0> /usr/lib/system/libdispatch.dylib
+    0x7fff93bee000 -     0x7fff93bffff7  libz.1.dylib (55) <88C7C7DE-04B8-316F-8B74-ACD9F3DE1AA1> /usr/lib/libz.1.dylib
+Sample analysis of process 71861 written to file /dev/stdout
