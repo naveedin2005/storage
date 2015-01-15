@@ -1,0 +1,112 @@
+2015-01-15 03:26:09,775 - DEBUG - Global extra conf not loaded or no function YcmCorePreload
+2015-01-15 03:26:10,243 - INFO - Received event notification
+2015-01-15 03:26:10,243 - DEBUG - Event name: BufferVisit
+2015-01-15 03:26:10,243 - INFO - Received event notification
+2015-01-15 03:26:10,244 - DEBUG - Event name: FileReadyToParse
+2015-01-15 03:26:10,245 - INFO - Adding buffer identifiers for file: /Users/admin/.vimrc
+2015-01-15 03:26:11,888 - INFO - Received health request
+2015-01-15 03:26:11,895 - INFO - Received event notification
+2015-01-15 03:26:11,895 - DEBUG - Event name: BufferVisit
+2015-01-15 03:26:11,897 - INFO - Received event notification
+2015-01-15 03:26:11,897 - DEBUG - Event name: FileReadyToParse
+2015-01-15 03:26:11,897 - INFO - Adding buffer identifiers for file: /Users/admin/Desktop/MagicalRecord/MagicalRecord/Core/MagicalRecord+ErrorHandling.m
+Traceback (most recent call last):
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/bottle/bottle.py", line 861, in _handle
+    return route.call(**args)
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/bottle/bottle.py", line 1734, in wrapper
+    rv = callback(*a, **ka)
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/watchdog_plugin.py", line 100, in wrapper
+    return callback( *args, **kwargs )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/hmac_plugin.py", line 54, in wrapper
+    body = callback( *args, **kwargs )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/handlers.py", line 70, in EventNotification
+    event_handler )( request_data )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/completers/cpp/clang_completer.py", line 202, in OnFileReadyToParse
+    flags = self._FlagsForRequest( request_data )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/completers/cpp/clang_completer.py", line 265, in _FlagsForRequest
+    return self._flags.FlagsForFile( filename, client_data = client_data )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/completers/cpp/flags.py", line 56, in FlagsForFile
+    module = extra_conf_store.ModuleForSourceFile( filename )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/extra_conf_store.py", line 48, in ModuleForSourceFile
+    return Load( ModuleFileForSourceFile( filename ) )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/extra_conf_store.py", line 59, in ModuleFileForSourceFile
+    if Load( module_file ):
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/extra_conf_store.py", line 134, in Load
+    if not _ShouldLoad( module_file ):
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/extra_conf_store.py", line 117, in _ShouldLoad
+    raise UnknownExtraConf( module_file )
+UnknownExtraConf: Found /Users/admin/Desktop/MagicalRecord/.ycm_extra_conf.py. Load? 
+
+(Question can be turned off with options, see YCM docs)
+2015-01-15 03:26:11,931 - INFO - Received event notification
+2015-01-15 03:26:11,931 - DEBUG - Event name: BufferVisit
+2015-01-15 03:26:11,964 - INFO - Received event notification
+2015-01-15 03:26:11,965 - DEBUG - Event name: BufferVisit
+2015-01-15 03:26:11,965 - INFO - Received event notification
+2015-01-15 03:26:11,966 - DEBUG - Event name: FileReadyToParse
+2015-01-15 03:26:11,966 - INFO - Adding buffer identifiers for file: /Users/admin/Desktop/MagicalRecord/MagicalRecord/Core/MagicalRecord+ErrorHandling.m
+Traceback (most recent call last):
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/bottle/bottle.py", line 861, in _handle
+    return route.call(**args)
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/bottle/bottle.py", line 1734, in wrapper
+    rv = callback(*a, **ka)
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/watchdog_plugin.py", line 100, in wrapper
+    return callback( *args, **kwargs )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/hmac_plugin.py", line 54, in wrapper
+    body = callback( *args, **kwargs )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/handlers.py", line 70, in EventNotification
+    event_handler )( request_data )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/completers/cpp/clang_completer.py", line 202, in OnFileReadyToParse
+    flags = self._FlagsForRequest( request_data )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/completers/cpp/clang_completer.py", line 265, in _FlagsForRequest
+    return self._flags.FlagsForFile( filename, client_data = client_data )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/completers/cpp/flags.py", line 56, in FlagsForFile
+    module = extra_conf_store.ModuleForSourceFile( filename )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/extra_conf_store.py", line 48, in ModuleForSourceFile
+    return Load( ModuleFileForSourceFile( filename ) )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/extra_conf_store.py", line 59, in ModuleFileForSourceFile
+    if Load( module_file ):
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/extra_conf_store.py", line 134, in Load
+    if not _ShouldLoad( module_file ):
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/extra_conf_store.py", line 117, in _ShouldLoad
+    raise UnknownExtraConf( module_file )
+UnknownExtraConf: Found /Users/admin/Desktop/MagicalRecord/.ycm_extra_conf.py. Load? 
+
+(Question can be turned off with options, see YCM docs)
+2015-01-15 03:26:14,885 - INFO - Received debug info request
+2015-01-15 03:26:22,765 - INFO - Received event notification
+2015-01-15 03:26:22,766 - DEBUG - Event name: FileReadyToParse
+2015-01-15 03:26:22,766 - INFO - Adding buffer identifiers for file: /Users/admin/Desktop/MagicalRecord/MagicalRecord/Core/MagicalRecord+ErrorHandling.m
+Traceback (most recent call last):
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/bottle/bottle.py", line 861, in _handle
+    return route.call(**args)
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/bottle/bottle.py", line 1734, in wrapper
+    rv = callback(*a, **ka)
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/watchdog_plugin.py", line 100, in wrapper
+    return callback( *args, **kwargs )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/hmac_plugin.py", line 54, in wrapper
+    body = callback( *args, **kwargs )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/handlers.py", line 70, in EventNotification
+    event_handler )( request_data )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/completers/cpp/clang_completer.py", line 202, in OnFileReadyToParse
+    flags = self._FlagsForRequest( request_data )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/completers/cpp/clang_completer.py", line 265, in _FlagsForRequest
+    return self._flags.FlagsForFile( filename, client_data = client_data )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/completers/cpp/flags.py", line 56, in FlagsForFile
+    module = extra_conf_store.ModuleForSourceFile( filename )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/extra_conf_store.py", line 48, in ModuleForSourceFile
+    return Load( ModuleFileForSourceFile( filename ) )
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/extra_conf_store.py", line 59, in ModuleFileForSourceFile
+    if Load( module_file ):
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/extra_conf_store.py", line 134, in Load
+    if not _ShouldLoad( module_file ):
+  File "/Users/admin/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/../ycmd/extra_conf_store.py", line 117, in _ShouldLoad
+    raise UnknownExtraConf( module_file )
+UnknownExtraConf: Found /Users/admin/Desktop/MagicalRecord/.ycm_extra_conf.py. Load? 
+
+(Question can be turned off with options, see YCM docs)
+2015-01-15 03:26:24,221 - INFO - Received extra conf load request
+2015-01-15 03:26:37,428 - INFO - Received debug info request
+2015-01-15 03:27:15,315 - INFO - Received event notification
+2015-01-15 03:27:15,315 - DEBUG - Event name: FileReadyToParse
+2015-01-15 03:27:15,315 - INFO - Adding buffer identifiers for file: /Users/admin/Desktop/MagicalRecord/MagicalRecord/Core/MagicalRecord+ErrorHandling.m
